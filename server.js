@@ -8,10 +8,7 @@ const cors = require('cors');
 connectDB();
 
 //Init middleware
-app.use(express.json())
-app.use(cors({
-    origin: 'https://sapiens-client.onrender.com/'
-}));
+app.use(cors())
 
 
 app.use('/api/auth', require('./routes/api/auth'));
