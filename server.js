@@ -3,12 +3,15 @@ const connectDB = require("./config/db");
 const app = express();
 const path = require('path')
 require('dotenv').config()
+const cors = require('cors');
 //Connect Database
 connectDB();
 
 //Init middleware
 app.use(express.json())
-
+app.use(cors({
+    origin: 'https://sapiens-client.onrender.com/'
+}));
 
 
 app.use('/api/auth', require('./routes/api/auth'));
